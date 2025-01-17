@@ -82,6 +82,31 @@
     .lightbox.active {
       display: flex;
     }
+    .anecdote-container {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-left: 4px solid #b6b6b6;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .anecdote-container img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .anecdote-container blockquote {
+      margin: 0;
+      font-style: italic;
+      color: #555;
+    }
+    .anecdote-author {
+      margin-top: 1rem;
+      text-align: right;
+      font-weight: bold;
+      color: #333;
+    }
     form label {
       display: block;
       margin: 0.5rem 0 0.25rem;
@@ -115,7 +140,7 @@
   <main>
     <section id="introduction">
       <h3><i>"If there ever comes a day when we can’t be together, keep me in your heart. I’ll stay there forever."</i></h3><p><strong>· A.A. Milne</strong></p>
-      <div>It is with </div>
+      <div>It is with our hearts full of love that we honor and cherish Diane for all she has given us. Please take the time to remember her here, and if you feel moved, please share your memories with us so we can add them here.</div>
     </section>
     <section id="gallery">
       <h2>Photo Gallery</h2>
@@ -130,13 +155,18 @@
       </div>
     </section>
     <section id="anecdotes">
-      <h2>Anecdotes</h2>
+      <h2>Memories</h2>
       <p>Here are some beautiful stories shared by friends and family:</p>
-      <ul id="anecdote-list">
-        <li>"Lorem ipsum dolor sit amet, consectetur adipiscing elit." - John Doe</li>
-        <li>"Praesent ac magna justo. Pellentesque ac lectus quis elit blandit fringilla." - Jane Smith</li>
-        <!-- Add more anecdotes dynamically -->
-      </ul>
+      <div class="anecdote-container">
+        <img src="images/weddingphoto1.jpg" alt="Mike and Diane Wedding Day">
+        <blockquote>"Example for a memory that includes an image"</blockquote>
+        <div class="anecdote-author">- Michael Mitts</div>
+      </div>
+      <div class="anecdote-container">
+        <blockquote>"Praesent ac magna justo. Pellentesque ac lectus quis elit blandit fringilla. Example for a memory that does not include an image"</blockquote>
+        <div class="anecdote-author">- No Imagehere</div>
+      </div>
+      <!-- Add more anecdotes dynamically -->
     </section>
     <section id="contact">
       <h2>Share Your Memories</h2>
