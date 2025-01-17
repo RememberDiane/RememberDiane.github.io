@@ -3,28 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>In Memory of Diane Dusenbury</title>
+  <title>In Memory of [Your Friend's Name]</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: url('path-to-header-image.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.5rem;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    form label {
+      display: block;
+      margin: 0.5rem 0 0.25rem;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    form button {
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>In Loving Memory of Diane Dusenbury</h1>
+    <h1>In Loving Memory of [Your Friend's Name]</h1>
     <p>A place to honor, remember, and celebrate.</p>
   </header>
   <main>
+    <section id="introduction">
+      <h2>Welcome</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet facilisis urna. Praesent ac magna justo. Pellentesque ac lectus quis elit blandit fringilla.</p>
+    </section>
     <section id="gallery">
       <h2>Photo Gallery</h2>
       <div class="gallery-grid">
         <img src="path-to-image1.jpg" alt="Description 1">
         <img src="path-to-image2.jpg" alt="Description 2">
+        <img src="path-to-image3.jpg" alt="Description 3">
         <!-- Add more images -->
       </div>
     </section>
     <section id="anecdotes">
       <h2>Anecdotes</h2>
+      <p>Here are some beautiful stories shared by friends and family:</p>
       <ul id="anecdote-list">
-        <li>"[Story 1]" - Contributor Name</li>
-        <li>"[Story 2]" - Contributor Name</li>
+        <li>"Lorem ipsum dolor sit amet, consectetur adipiscing elit." - John Doe</li>
+        <li>"Praesent ac magna justo. Pellentesque ac lectus quis elit blandit fringilla." - Jane Smith</li>
         <!-- Add more anecdotes dynamically -->
       </ul>
     </section>
@@ -32,11 +106,11 @@
       <h2>Share Your Memories</h2>
       <form action="mailto:welovediane1967@gmail.com" method="post" enctype="text/plain">
         <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
         <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
         <label for="message">Your Anecdote:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Share your memory here..." required></textarea>
         <button type="submit">Submit</button>
       </form>
     </section>
