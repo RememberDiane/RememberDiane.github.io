@@ -15,10 +15,17 @@
       color: #333;
     }
     header {
-      background: url('/images/header.jpg') no-repeat center center/cover;
+      background: url('/images/header.png') no-repeat center center/cover;
       color: white;
       text-align: center;
       padding: 4rem 1rem;
+      position: relative;
+    }
+    header h1, header p {
+      background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent grey background */
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 105px;
     }
     header h1 {
       font-size: 3rem;
@@ -81,14 +88,14 @@
   </header>
   <main>
     <section id="introduction">
-      <h2>Welcome</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet facilisis urna. Praesent ac magna justo. Pellentesque ac lectus quis elit blandit fringilla.</p>
+      <h3><i>"If there ever comes a day when we can’t be together, keep me in your heart. I’ll stay there forever."</i></h3><p><strong>· A.A. Milne</strong></p>
+      <div>It is with </div>
     </section>
     <section id="gallery">
       <h2>Photo Gallery</h2>
       <div class="gallery-grid">
-        <img src="path-to-image1.jpg" alt="Description 1">
-        <img src="path-to-image2.jpg" alt="Description 2">
+        <img src="images/Diane_1971_2.jpg" alt="Description 1">
+        <img src="images/YesiDiane_2023Savannah.jpg" alt="Description 2">
         <img src="path-to-image3.jpg" alt="Description 3">
         <!-- Add more images -->
       </div>
