@@ -174,7 +174,7 @@
 <!--Photo Gallery Section-->
 <section id="gallery">
   <h2>Photo Gallery</h2>
-  <div class="gallery-grid">
+  <div class="gallery-grid collapsible">
     <img src="images/Diane_1971_2.jpg" alt="Young Diane in 1971">
     <img src="images/YesiDiane_2023Savannah.jpg" alt="Diane and her friend Yesi in 2023">
     <img src="images/diane_mike_funny.jpg" alt="Diane and Michael in 2017">
@@ -260,32 +260,31 @@
   <footer>
     <p>&copy; 2025 RememberDiane.org</p>
   </footer>
-  <!--Script-->
   <script>
     const images = document.querySelectorAll('.gallery-grid img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
     const galleryToggle = document.getElementById('gallery-toggle');
     const anecdotesToggle = document.getElementById('anecdotes-toggle');
-
+  
     images.forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightbox.classList.add('active');
       });
     });
-
+  
     lightbox.addEventListener('click', () => {
       lightbox.classList.remove('active');
       lightboxImg.src = '';
     });
-
+  
     galleryToggle.addEventListener('click', () => {
       const gallery = document.querySelector('.gallery-grid');
       gallery.classList.toggle('collapsible');
       galleryToggle.textContent = gallery.classList.contains('collapsible') ? 'Show More' : 'Show Less';
     });
-
+  
     anecdotesToggle.addEventListener('click', () => {
       const anecdotes = document.querySelectorAll('#anecdotes .anecdote-container');
       anecdotes.forEach((anecdote, index) => {
@@ -293,14 +292,22 @@
           anecdote.style.display = anecdote.style.display === 'none' ? 'block' : 'none';
         }
       });
+      // Use the visibility of the 4th anecdote to update the button text
       anecdotesToggle.textContent = anecdotes[3].style.display === 'none' ? 'Show More' : 'Show Less';
     });
-
-    // Initialize anecdotes visibility
+  
+    // Initialize anecdotes visibility: hide anecdotes beyond the first three
     const anecdotes = document.querySelectorAll('#anecdotes .anecdote-container');
     anecdotes.forEach((anecdote, index) => {
       if (index >= 3) anecdote.style.display = 'none';
     });
+  
+    // Set initial text for gallery toggle button based on its collapsed state
+    if (document.querySelector('.gallery-grid').classList.contains('collapsible')) {
+      galleryToggle.textContent = 'Show More';
+    } else {
+      galleryToggle.textContent = 'Show Less';
+    }
   </script>
 </body>
 </html>
