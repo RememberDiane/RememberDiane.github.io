@@ -27,7 +27,7 @@
       position: relative;
     }
     header h1, header p {
-      background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent grey background */
+      background-color: rgba(0, 0, 0, 0.15);
       display: inline-block;
       padding: 0.5rem 1rem;
       border-radius: 105px;
@@ -58,7 +58,7 @@
     }
     .gallery-grid img {
       width: 100%;
-      height: 150px; /* Consistent size for thumbnails */
+      height: 150px;
       object-fit: cover;
       border-radius: 8px;
       cursor: pointer;
@@ -66,6 +66,10 @@
     }
     .gallery-grid img:hover {
       transform: scale(1.05);
+    }
+    .gallery-grid.collapsible {
+      max-height: 500px; /* Approx. 3 rows */
+      overflow: hidden;
     }
     .lightbox {
       display: none;
@@ -97,8 +101,17 @@
       position: relative;
     }
     .anecdote-container img {
-      max-width: 100%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
       border-radius: 8px;
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+    .anecdote-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       margin-bottom: 1rem;
     }
     .anecdote-container blockquote {
@@ -135,12 +148,16 @@
       background: #333;
       color: white;
     }
-    .video-section iframe {
-      width: 100%;
-      height: 315px;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 8px;
+    .show-button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -154,53 +171,54 @@
       <h3><i>"If there ever comes a day when we can’t be together, keep me in your heart. I’ll stay there forever."</i></h3><p><strong>· A.A. Milne</strong></p>
       <div>It is with our hearts full of love that we honor and cherish Diane for all she has given us. Please take the time to remember her here, and if you feel moved, please share your memories with us so we can add them here.</div>
     </section>
-    <!--Photo Gallery Section-->
-    <section id="gallery">
-      <h2>Photo Gallery</h2>
-      <div class="gallery-grid">
-        <img src="images/Diane_1971_2.jpg" alt="Young Diane in 1971">
-        <img src="images/YesiDiane_2023Savannah.jpg" alt="Diane and her friend Yesi in 2023">
-        <img src="images/diane_mike_funny.jpg" alt="Diane and Michael in 2017">
-        <img src="images/diane_bryan_ferry.jpg" alt="Diane and Bryan Ferry">
-        <img src="images/John Diane Lenore 2002.JPG" alt="John Diane Lenore 2002">
-        <img src="images/DianeInSeattle.jpg" alt="Diane in Seattle">
-        <img src="images/Diane_Bud_Tractor_2.jpg" alt="Diane and Bud on a tractor">
-        <img src="images/Diane Beth CO.jpg" alt="Diane and Beth">
-        <img src="images/MikeDianeBoat.jpg" alt="Mike and Diane on a Boat">
-        <img src="images/bwyoung.jpg" alt="">
-        <img src="images/christmasdi.jpg" alt="">
-        <img src="images/dianeeld.jpg" alt="">
-        <img src="images/happyoungdiane.jpg" alt="">
-        <img src="images/sciencefair.jpg" alt="">
-        <img src="images/vintagediane.jpg" alt="">
-        <img src="images/youngdi.jpg" alt="">
-        <img src="images/Dianetrees.JPG" alt="">
-        <img src="images/Diane Beth Bud.jpg" alt="">
-        <img src="images/Diane Beth Bud 2.jpg" alt="">
-        <img src="images/Diane Beth Sternquist Girls 2.jpg" alt="">
-        <img src="images/Supremes1.jpg" alt="">
-        <img src="images/Photo4 8x10.jpg" alt="">
-        <img src="images/Photo10 8x10.jpg" alt="">
-        <img src="images/Photo12b 8x10.jpg" alt="">
-        <img src="images/Photo18a 8x10.jpg" alt="">
-        <img src="images/Photo21 8x10.jpg" alt="">
-        <img src="images/ATL Diane In Oval Office.jpg" alt="">
-        <img src="images/IMG_1500 (1).jpg" alt="">
-        <img src="images/IMG_2816.JPG" alt="">
-        <img src="images/IMG_5189.JPG" alt="">
-        <img src="images/IMG_20210708_131441.jpg" alt="">
-        <img src="images/IMG_20210708_131858.jpg" alt="">
-        <img src="images/IMG_20210708_131930.jpg" alt="">
-        <img src="images/IMG_20220214_161809062_MP.jpg" alt="">
-        <img src="images/DianeFriend1.jpg" alt="">
-        <img src="images/Diane Claudia.jpg" alt="">
-        <img src="images/GT Jeanice Diane.jpg" alt="">
-        <img src="images/IMG_20220214_162659894.jpg" alt="">
-        <img src="images/JohnDianeMona.jpg" alt="">
+<!--Photo Gallery Section-->
+<section id="gallery">
+  <h2>Photo Gallery</h2>
+  <div class="gallery-grid">
+    <img src="images/Diane_1971_2.jpg" alt="Young Diane in 1971">
+    <img src="images/YesiDiane_2023Savannah.jpg" alt="Diane and her friend Yesi in 2023">
+    <img src="images/diane_mike_funny.jpg" alt="Diane and Michael in 2017">
+    <img src="images/diane_bryan_ferry.jpg" alt="Diane and Bryan Ferry">
+    <img src="images/John Diane Lenore 2002.JPG" alt="John Diane Lenore 2002">
+    <img src="images/DianeInSeattle.jpg" alt="Diane in Seattle">
+    <img src="images/Diane_Bud_Tractor_2.jpg" alt="Diane and Bud on a tractor">
+    <img src="images/Diane Beth CO.jpg" alt="Diane and Beth">
+    <img src="images/MikeDianeBoat.jpg" alt="Mike and Diane on a Boat">
+    <img src="images/bwyoung.jpg" alt="">
+    <img src="images/christmasdi.jpg" alt="">
+    <img src="images/dianeeld.jpg" alt="">
+    <img src="images/happyoungdiane.jpg" alt="">
+    <img src="images/sciencefair.jpg" alt="">
+    <img src="images/vintagediane.jpg" alt="">
+    <img src="images/youngdi.jpg" alt="">
+    <img src="images/Dianetrees.JPG" alt="">
+    <img src="images/Diane Beth Bud.jpg" alt="">
+    <img src="images/Diane Beth Bud 2.jpg" alt="">
+    <img src="images/Diane Beth Sternquist Girls 2.jpg" alt="">
+    <img src="images/Supremes1.jpg" alt="">
+    <img src="images/Photo4 8x10.jpg" alt="">
+    <img src="images/Photo10 8x10.jpg" alt="">
+    <img src="images/Photo12b 8x10.jpg" alt="">
+    <img src="images/Photo18a 8x10.jpg" alt="">
+    <img src="images/Photo21 8x10.jpg" alt="">
+    <img src="images/ATL Diane In Oval Office.jpg" alt="">
+    <img src="images/IMG_1500 (1).jpg" alt="">
+    <img src="images/IMG_2816.JPG" alt="">
+    <img src="images/IMG_5189.JPG" alt="">
+    <img src="images/IMG_20210708_131441.jpg" alt="">
+    <img src="images/IMG_20210708_131858.jpg" alt="">
+    <img src="images/IMG_20210708_131930.jpg" alt="">
+    <img src="images/IMG_20220214_161809062_MP.jpg" alt="">
+    <img src="images/DianeFriend1.jpg" alt="">
+    <img src="images/Diane Claudia.jpg" alt="">
+    <img src="images/GT Jeanice Diane.jpg" alt="">
+    <img src="images/IMG_20220214_162659894.jpg" alt="">
+    <img src="images/JohnDianeMona.jpg" alt="">
 
 
-        <!-- Add more images -->
+    <!-- Add more images -->
       </div>
+      <div class="show-button" id="gallery-toggle">Show More</div>
       <div class="lightbox" id="lightbox">
         <img src="" alt="Full-size image">
       </div>
@@ -210,12 +228,16 @@
       <h2>Memories</h2>
       <p>Here are some beautiful stories shared by friends and family:</p>
       <div class="anecdote-container">
-        <img src="images/weddingphoto1.jpg" alt="Mike and Diane Wedding Day">
+        <div class="gallery-grid">
+          <img src="images/weddingphoto1.jpg" alt="Mike and Diane Wedding Day">
+        </div>
         <blockquote>"Our wedding day"</blockquote>
         <div class="anecdote-author">- Michael Mitts</div>
       </div>
       <div class="anecdote-container">
-        <img src="images/blueheron.jpg" alt="Blue Heron Puzzle">
+        <div class="gallery-grid">
+          <img src="images/blueheron.jpg" alt="Blue Heron Puzzle">
+        </div>
         <blockquote>
           "There is beauty in the simple things in life. Often, we don't truly appreciate the moments we have until they are gone. In September 2022, I walked across the street to Michael and Diane's home. That afternoon, Diane and I spent time together assembling a beautiful puzzle of a Louisiana Blue Heron.
           <br><br>
@@ -225,22 +247,11 @@
         </blockquote>
         <div class="anecdote-author">- Kyle Jarnagin</div>
       </div>
-      <div class="anecdote-container">
-        <blockquote>"Testing testing testing"</blockquote>
-        <div class="anecdote-author">- No Image Example</div>
-      </div>
-      <!-- Add more anecdotes dynamically -->
-    </section>
-    <!--Video Section-->
-    <section id="videos" class="video-section">
-      <h2>Music Diane Requested to be Shared</h2>
-      <iframe src="https://www.youtube.com/embed/6k8cpUkKK4c?si=8DHvxBtxWsYpkF0q" allowfullscreen></iframe>
-      <!-- Add more videos as needed -->
+      <div class="show-button" id="anecdotes-toggle">Show More</div>
     </section>
     <!--Contact Section-->
     <section id="contact">
       <h2>Share Your Memories</h2>
-      <p>If you'd like to share a memory or anecdote about Diane, please email us directly by clicking the button below. <strong>Please make sure to sign your memory with the name(s)</strong> as you would like it to be published.</p>
       <a href="mailto:welovediane1967@gmail.com?subject=Memory%20of%20Diane%20Dusenbury" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #333; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
         Send an Email
       </a>
@@ -254,6 +265,8 @@
     const images = document.querySelectorAll('.gallery-grid img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
+    const galleryToggle = document.getElementById('gallery-toggle');
+    const anecdotesToggle = document.getElementById('anecdotes-toggle');
 
     images.forEach(img => {
       img.addEventListener('click', () => {
@@ -265,6 +278,28 @@
     lightbox.addEventListener('click', () => {
       lightbox.classList.remove('active');
       lightboxImg.src = '';
+    });
+
+    galleryToggle.addEventListener('click', () => {
+      const gallery = document.querySelector('.gallery-grid');
+      gallery.classList.toggle('collapsible');
+      galleryToggle.textContent = gallery.classList.contains('collapsible') ? 'Show More' : 'Show Less';
+    });
+
+    anecdotesToggle.addEventListener('click', () => {
+      const anecdotes = document.querySelectorAll('#anecdotes .anecdote-container');
+      anecdotes.forEach((anecdote, index) => {
+        if (index >= 3) {
+          anecdote.style.display = anecdote.style.display === 'none' ? 'block' : 'none';
+        }
+      });
+      anecdotesToggle.textContent = anecdotes[3].style.display === 'none' ? 'Show More' : 'Show Less';
+    });
+
+    // Initialize anecdotes visibility
+    const anecdotes = document.querySelectorAll('#anecdotes .anecdote-container');
+    anecdotes.forEach((anecdote, index) => {
+      if (index >= 3) anecdote.style.display = 'none';
     });
   </script>
 </body>
